@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { FiPlusSquare } from 'react-icons/fi';
-import { Container } from './styles';
+import { FiSettings, FiHome, FiBell, FiChevronDown } from 'react-icons/fi';
+
+import { Container, Avatar } from './styles';
 
 import Logo from '../../assets/logo.svg';
 
@@ -9,19 +10,24 @@ interface IHeaderProps {
   openModal: () => void;
 }
 
-const Header: React.FC<IHeaderProps> = () => (
+const Header: React.FC = () => (
   <Container>
     <header>
-      <img src={Logo} alt="GoRestaurant" />
+      <section>
+        <img src={Logo} alt="Dryve" />
+        <FiHome color="blue" size={16} />
+        <span> DryveOne - Frederico Boeri</span>
+        <FiChevronDown size={24} />
+      </section>
       <nav>
-        <div>
-          <button type="button" onClick={() => {}}>
-            <div className="text">Novo Prato</div>
-            <div className="icon">
-              <FiPlusSquare size={24} />
-            </div>
-          </button>
-        </div>
+        <FiSettings size={24} />
+        <FiBell size={24} />
+        <Avatar>
+          <img
+            src="https://avatars.githubusercontent.com/u/42679820?v=4"
+            alt="Usuário"
+          />
+        </Avatar>
       </nav>
     </header>
   </Container>
