@@ -15,8 +15,12 @@ export default createGlobalStyle`
   }
 
   body, input, button {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    letter-spacing: -0.025em;
   }
 
   h1, h2, h3, h4, h5, h6, strong {
