@@ -8,7 +8,7 @@ interface IProps {
   isActive: boolean;
 }
 
-const CardMenu: React.FC<IProps> = ({ icon, title, isActive = false }) => {
+const HeaderCard: React.FC<IProps> = ({ icon, title, isActive = false }) => {
   return (
     <Container isActive={isActive}>
       {icon}
@@ -17,4 +17,4 @@ const CardMenu: React.FC<IProps> = ({ icon, title, isActive = false }) => {
   );
 };
 
-export default CardMenu;
+export default HeaderCard;
