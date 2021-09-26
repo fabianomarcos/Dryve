@@ -2,6 +2,7 @@ import React, { useState, useCallback } from 'react';
 
 import Header from '../../components/Header';
 import SideMenu from '../../components/SideMenu';
+import Home from '../Home';
 import { Container } from './styles';
 
 const Dashboard: React.FC = () => {
@@ -11,7 +12,7 @@ const Dashboard: React.FC = () => {
       <Header />
       <Container>
         <SideMenu currentPage={currentPage} />
-        <div>Body</div>
+        <Home title={currentPage} />
       </Container>
     </>
   );
