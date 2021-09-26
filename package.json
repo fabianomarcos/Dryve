@@ -1,5 +1,5 @@
 {
-  "name": "gostack-challenge-10",
+  "name": "Dryver",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -51,6 +51,7 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
+    "server": "yarn json-server server.json -p 3333 -w",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
