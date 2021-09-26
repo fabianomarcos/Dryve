@@ -16,6 +16,7 @@ export default createGlobalStyle`
 
   body, input, button {
     font-family: 'Inter', sans-serif;
+    color: #1d2c4b;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
