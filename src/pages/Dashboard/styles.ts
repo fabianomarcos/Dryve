@@ -1,10 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  height: 100%;
+    padding: 8px;
+`;
 
-  background: #e5e5e5;
-  margin: 0;
+export const Content = styled.div`
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    height: 100%;
+
+    background: #e5e5e5;
+    margin: 0;
 `;
