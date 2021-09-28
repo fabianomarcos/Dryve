@@ -16,7 +16,8 @@
 			"brand_name": "FORD",
 			"ad_selling_price": 103990.0000,
 			"model_uuid": "8872911d-0bbc-45c0-9d1e-de66d098b808",
-			"brand_uuid": "7cdb22f3-5da4-45c4-bb45-677a6a3fb819"
+			"brand_uuid": "7cdb22f3-5da4-45c4-bb45-677a6a3fb819",
+            "expired": true
 		},
 		{
 			"evaluation_type": "presential",
@@ -34,7 +35,8 @@
 			"brand_name": "HONDA",
 			"ad_selling_price": 69900.0000,
 			"model_uuid": "c7061453-2199-4be3-84fd-9ea17ec93667",
-			"brand_uuid": "8b452147-e524-4d59-9de7-7cc0997eff20"
+			"brand_uuid": "8b452147-e524-4d59-9de7-7cc0997eff20",
+            "expired": true
 		},
 		{
 			"evaluation_type": "remote",
@@ -52,7 +54,8 @@
 			"brand_name": "PEUGEOT",
 			"ad_selling_price": 17550.0000,
 			"model_uuid": "aba61dbe-d817-4191-a1bd-61ef951a69bf",
-			"brand_uuid": "ad771d9a-3bd5-45a6-a71a-56a44dc27b9e"
+			"brand_uuid": "ad771d9a-3bd5-45a6-a71a-56a44dc27b9e",
+            "expired": true
 		},
 		{
 			"evaluation_type": "remote",
@@ -70,7 +73,8 @@
 			"brand_name": "KIA",
 			"ad_selling_price": 24999.0000,
 			"model_uuid": "51cbf59b-a461-4c48-b0a2-86c76c2bfdaa",
-			"brand_uuid": "a65bdb87-9a77-4ceb-8645-5d92af98088d"
+			"brand_uuid": "a65bdb87-9a77-4ceb-8645-5d92af98088d",
+            "expired": true
 		},
 		{
 			"evaluation_type": "remote",
@@ -88,7 +92,8 @@
 			"brand_name": "CITROEN",
 			"ad_selling_price": 55990.0000,
 			"model_uuid": "dae53b7a-f182-4e9f-88d8-e019dcbc4aa5",
-			"brand_uuid": "f2235215-792d-445a-bdda-7eed54071367"
+			"brand_uuid": "f2235215-792d-445a-bdda-7eed54071367",
+            "expired": false
 		},
 		{
 			"evaluation_type": "remote",
@@ -106,7 +111,8 @@
 			"brand_name": "HONDA",
 			"ad_selling_price": 53499.0000,
 			"model_uuid": "3edaf0ae-efa9-4fc4-8ec1-5f55aca46c5c",
-			"brand_uuid": "8b452147-e524-4d59-9de7-7cc0997eff20"
+			"brand_uuid": "8b452147-e524-4d59-9de7-7cc0997eff20",
+            "expired": false
 		},
 		{
 			"evaluation_type": "remote",
@@ -124,7 +130,38 @@
 			"brand_name": "FORD",
 			"ad_selling_price": 31999.0000,
 			"model_uuid": "6fbfc6df-0430-4f63-8727-7d1fc52da240",
-			"brand_uuid": "7cdb22f3-5da4-45c4-bb45-677a6a3fb819"
+			"brand_uuid": "7cdb22f3-5da4-45c4-bb45-677a6a3fb819",
+            "expired": false
 		}
-	]
+	],
+    "test-driver": [
+            {
+                "expired": true,
+                "vehicle_uuid": "6bf5ccd9-17ef-455c-aef9-c1b797329936"
+            },
+            {
+                "expired": true,
+                "vehicle_uuid": "14ada4a4-7033-4b1f-9578-8a654b711d70"
+            },
+            {
+                "expired": true,
+                "vehicle_uuid": "da8a32b9-a0d4-4b05-b74d-2cd5664e85ea"
+            },
+            {
+                "expired": true,
+                "vehicle_uuid": "99d26a49-5109-4e9d-b582-2a220dc522b3"
+            },
+            {
+                "expired": false,
+                "vehicle_uuid": "c6fa2a63-2623-4ab1-bef6-b6e2d36e280e"
+            },
+            {
+                "expired": false,
+                "vehicle_uuid": "bfb5de87-4882-4538-88a4-b25578f433d3"
+            },
+            {
+                "expired": false,
+                "vehicle_uuid": "cd106ceb-6d5f-4063-b42d-618937210e0e"
+            }
+    ]
 }
