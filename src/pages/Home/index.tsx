@@ -24,11 +24,14 @@ interface IProps {
 }
 
 const Home: React.FC<IProps> = ({ title }) => {
+    const { taxi, tags, calendar } = generalIcons;
     const [cars, setCars] = useState<IDataCars[]>([]);
+
     const expiredTestDrivers = useMemo(
         () => cars.filter(c => c.expired),
         [cars],
     );
+
     const validTestDrivers = useMemo(
         () => cars.filter(c => !c.expired),
         [cars],
@@ -46,14 +49,17 @@ const Home: React.FC<IProps> = ({ title }) => {
                 const car = statusTestDrive.data.find(
                     status => status.vehicle_uuid === d.vehicle_uuid,
                 );
-                return { ...d, expired: car?.expired || false };
+                return {
+                    ...d,
+                    expired: car?.expired,
+                    date_test: new Date(car?.date_test as string),
+                };
             });
 
-            setCars(carsFormatted);
+            setCars(carsFormatted as unknown as IDataCars[]);
         })();
     }, []);
 
-    const { taxi, tags, calendar } = generalIcons;
     return (
         <Container>
             <h1>{title}</h1>
