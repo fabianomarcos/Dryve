@@ -1,21 +1,27 @@
 /* eslint-disable react/jsx-indent */
 import React from 'react';
+import { Divider } from '../../Divider/styles';
 
-import { Container } from './styles';
+import { Container, Image } from './styles';
 
 interface IProps {
-    icon: JSX.Element;
+    pathIcon: string;
     name: string;
     quantity: number;
 }
 
-const RowLeadsCard: React.FC<IProps> = ({ icon, name, quantity = 0 }) => {
+const RowLeadsCard: React.FC<IProps> = ({ pathIcon, name, quantity = 0 }) => {
     return (
-        <Container>
-            {icon}
-            {name}
-            <span>{quantity}</span>
-        </Container>
+        <>
+            <Container>
+                <Image>
+                    <img src={pathIcon} alt="" />
+                </Image>
+                {name}
+                <span>{quantity}</span>
+            </Container>
+            <Divider />
+        </>
     );
 };
 
