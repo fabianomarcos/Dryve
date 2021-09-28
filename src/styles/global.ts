@@ -10,13 +10,12 @@ export default createGlobalStyle`
 
   body {
     background: #fff;
-    color: #FFF;
+    color: #1d2c4b;
     -webkit-font-smoothing: antialiased;
   }
 
   body, input, button {
     font-family: 'Inter', sans-serif;
-    color: #1d2c4b;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -25,7 +24,7 @@ export default createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6, strong {
-    font-weight: 500;
+    font-weight: bold;
   }
 
   button {
