@@ -15,4 +15,14 @@ export interface IDataCars {
     brand_name: string;
     model_uuid: string;
     brand_uuid: string;
+    expired: boolean;
+}
+
+export interface ISchedule {
+    date: Date;
+}
+
+export interface IStatusTestDriver {
+    vehicle_uuid: string;
+    expired: boolean;
 }
