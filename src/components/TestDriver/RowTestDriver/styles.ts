@@ -1,13 +1,16 @@
-import styled from 'styled-components';
-import { shade } from 'polished';
+import styled, { css } from 'styled-components';
 
-export const Container = styled.div`
+interface IProps {
+    expired: boolean;
+}
+
+export const Container = styled.div<IProps>`
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
 
+    gap: 16px;
     padding: 24px;
     background: #ffffff;
-    // border: 0.2px solid ${shade(0.1, '#ffffff')};
     min-width: 544px;
     width: 100%;
     border-radius: 8px;
@@ -25,10 +28,70 @@ export const Container = styled.div`
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: space-between;
+
+        font-size: 12px;
+
+        strong {
+            color: #1d2c4b;
+        }
+
+        font-weight: normal;
     }
 
     div + div {
-        align-items: flex-end;
+        justify-content: space-evenly;
+
+        ${props =>
+            props.expired &&
+            css`
+                align-items: flex-end;
+            `}
+
+        ${props =>
+            !props.expired &&
+            css`
+                align-items: center;
+            `}
+    }
+`;
+
+export const TestDriverExpired = styled.div`
+    gap: 10px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    color: #666666;
+
+    span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background: #ffab00;
+        color: #ffffff;
+        padding: 4px 8px;
+        border-radius: 500px;
+        font-weight: 600;
+    }
+`;
+
+export const TestDriverScheduled = styled.div`
+    gap: 10px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 12px;
+    color: #666666;
+
+    span {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        background: #cce8fe;
+        color: #1d2c4b;
+        padding: 4px 8px;
+        border-radius: 500px;
+        font-weight: 600;
     }
 `;

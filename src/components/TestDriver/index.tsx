@@ -1,11 +1,11 @@
+/* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-indent */
 import React from 'react';
 
 import { Container } from './styles';
 
-import { generalIcons } from '../icons/icons';
 import Divider from '../Divider';
-import { IDataCars } from '../../interfaces/IDataCars';
+import { IDataCars } from '../../interfaces/types';
 import RowTestDriver from './RowTestDriver';
 
 interface IProps {
@@ -21,11 +21,15 @@ const TestDriver: React.FC<IProps> = ({ title, cars }) => {
             {cars?.length > 0 &&
                 cars.map((car: IDataCars) => (
                     <>
-                        <RowTestDriver key={car.brand_uuid} data={car} />
+                        <RowTestDriver
+                            key={car.brand_uuid}
+                            data={car}
+                            schedule={{ date: new Date('2021/09/27') }}
+                            expired={car.expired}
+                        />
                         <Divider />
                     </>
                 ))}
-            ;
         </Container>
     );
 };
