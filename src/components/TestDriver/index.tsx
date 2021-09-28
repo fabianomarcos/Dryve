@@ -24,7 +24,6 @@ const TestDriver: React.FC<IProps> = ({ title, cars }) => {
                         <RowTestDriver
                             key={car.brand_uuid}
                             data={car}
-                            schedule={{ date: new Date('2021/09/27') }}
                             expired={car.expired}
                         />
                         <Divider />

@@ -1,10 +1,10 @@
 import styled, { css } from 'styled-components';
 
-interface IProps {
-    expired: boolean;
+interface IPropsImage {
+    image: string;
 }
 
-export const Container = styled.div<IProps>`
+export const Container = styled.div`
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
 
@@ -15,16 +15,7 @@ export const Container = styled.div<IProps>`
     width: 100%;
     border-radius: 8px;
 
-    img {
-        background-size: cover;
-        width: 96px;
-        height: 72px;
-        border: 1px solid #efefef;
-        filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.08));
-        border-radius: 4px;
-    }
-
-    div {
+    .content {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -38,25 +29,15 @@ export const Container = styled.div<IProps>`
 
         font-weight: normal;
     }
-
-    div + div {
-        justify-content: space-evenly;
-
-        ${props =>
-            props.expired &&
-            css`
-                align-items: flex-end;
-            `}
-
-        ${props =>
-            !props.expired &&
-            css`
-                align-items: center;
-            `}
-    }
 `;
 
 export const TestDriverExpired = styled.div`
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 48px;
     gap: 10px;
     font-weight: normal;
     font-size: 12px;
@@ -77,6 +58,11 @@ export const TestDriverExpired = styled.div`
 `;
 
 export const TestDriverScheduled = styled.div`
+    justify-content: space-evenly;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
     gap: 10px;
     font-weight: normal;
     font-size: 12px;
@@ -94,4 +80,17 @@ export const TestDriverScheduled = styled.div`
         border-radius: 500px;
         font-weight: 600;
     }
+`;
+
+export const Image = styled.div<IPropsImage>`
+    ${props =>
+        props.image &&
+        css`
+            background: url(${props.image});
+            background-size: cover;
+            border-radius: 4px;
+            border: 1px solid #efefef;
+            width: 96px;
+            height: 72px;
+        `}
 `;

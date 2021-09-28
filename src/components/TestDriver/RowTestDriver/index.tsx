@@ -1,28 +1,28 @@
 /* eslint-disable react/jsx-indent */
 import React from 'react';
-import { IDataCars, ISchedule } from '../../../interfaces/types';
+import { IDataCars } from '../../../interfaces/types';
 import {
     formatDateForDisplay,
     formatDateInDays,
 } from '../../../utils/functions';
 
-import { Container, TestDriverExpired, TestDriverScheduled } from './styles';
+import {
+    Container,
+    TestDriverExpired,
+    TestDriverScheduled,
+    Image,
+} from './styles';
 
 interface IProps {
     data: IDataCars;
-    schedule: ISchedule;
     expired: boolean;
 }
 
-const RowTestDriver: React.FC<IProps> = ({
-    data,
-    schedule,
-    expired = false,
-}) => {
+const RowTestDriver: React.FC<IProps> = ({ data, expired = false }) => {
     return (
-        <Container expired={expired}>
-            <img src={data.image} alt={data.model_name} />
-            <div>
+        <Container>
+            <Image image={data.image} />
+            <div className="content">
                 <strong>{data.model_name}</strong>
                 <span>{data.version_name}</span>
                 <span>{`${data.version_name} - ${data.fuel_type}`}</span>
@@ -33,12 +33,12 @@ const RowTestDriver: React.FC<IProps> = ({
             {expired ? (
                 <TestDriverExpired>
                     <span>Vencido</span>
-                    {formatDateInDays(schedule.date)}
+                    {formatDateInDays(data.date_test)}
                 </TestDriverExpired>
             ) : (
                 <TestDriverScheduled>
                     <span>Agendado</span>
-                    {formatDateForDisplay(schedule.date)}
+                    {formatDateForDisplay(data.date_test)}
                 </TestDriverScheduled>
             )}
         </Container>
