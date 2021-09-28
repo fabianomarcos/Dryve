@@ -20,10 +20,10 @@ export const formatDateForDisplay = (
 };
 
 export const formatDateInDays = (date: Date): string => {
-    const days = differenceInCalendarDays(date, new Date('2021-09-27'));
+    const days = differenceInCalendarDays(new Date(), date);
     const time = formatDistance(subDays(new Date(), days), date, {
         addSuffix: true,
         locale: pt,
     });
-    return time.replace('aproximadamente ', '');
+    return days > 0 ? `Ha ${days} dias` : time.replace('aproximadamente ', '');
 };
