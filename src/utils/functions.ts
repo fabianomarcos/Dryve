@@ -27,3 +27,7 @@ export const formatDateInDays = (date: Date): string => {
     });
     return days > 0 ? `Ha ${days} dias` : time.replace('aproximadamente ', '');
 };
+
+export function mascaraTelephone(valor: string): string {
+    return valor?.replace(/(\d{2})(\d{5})(\d{4})/g, '($1) $2-$3');
+}

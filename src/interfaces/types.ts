@@ -31,3 +31,11 @@ export interface ILastLeads {
     quantity: number;
     name: string;
 }
+
+export interface ICustomer {
+    id: string;
+    name: string;
+    lastName: string;
+    email: string;
+    telephone: number;
+}

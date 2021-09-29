@@ -19,16 +19,16 @@ const Header: React.FC = () => {
                 <section>
                     <img src={Logo} alt="Dryve" />
                     {home}
-                    <span> DryveOne - Frederico Boeri</span>
+                    <span> DryveOne - Fabiano Marcos</span>
                     {chevronDown}
                 </section>
                 <nav>
-                    {settings}
                     {bell}
+                    {settings}
                     <Avatar>
                         <img
                             src="https://avatars.githubusercontent.com/u/42679820?v=4"
-                            alt="Usuário"
+                            alt="Fabiano Marcos"
                         />
                     </Avatar>
                 </nav>
