@@ -7,6 +7,7 @@ import {
     FiChevronDown,
     FiTag,
     FiSearch,
+    FiPlus,
 } from 'react-icons/fi';
 import {
     FaTaxi,
@@ -16,6 +17,7 @@ import {
     FaChartLine,
 } from 'react-icons/fa';
 import { RiBankLine } from 'react-icons/ri';
+import { MdTune } from 'react-icons/md';
 
 const size = '24px';
 
@@ -33,4 +35,6 @@ export const generalIcons = {
     tags: <FiTag size={size} />,
     bank: <RiBankLine size={size} />,
     search: <FiSearch size={size} />,
+    plus: <FiPlus size={size} />,
+    tune: <MdTune size={size} />,
 };
