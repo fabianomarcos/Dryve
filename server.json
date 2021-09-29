@@ -202,5 +202,86 @@
             "quantity": 5,
             "name": "Mercado Livre"
         }
+    ],
+    "customers": [
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        },
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        },
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        },
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        },
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        },
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        },
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        },
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        },
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        },
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        },
+        {
+            "id": "cd106ceb-6d5f-4063-b42d-618937210evv",
+            "name": "João",
+            "lastName": "trabalho",
+            "email": "joão@trabalho",
+            "telephone": "31995655552"
+        }
+
     ]
+
 }
