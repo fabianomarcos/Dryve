@@ -93,7 +93,7 @@ export const EqualSizeFields = styled.div`
         display: flex;
         justify-content: space-between;
         div {
-            max-width: 132px;
+            max-width: 118px;
         }
     }
 `;
