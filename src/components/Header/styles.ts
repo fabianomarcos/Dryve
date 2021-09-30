@@ -1,43 +1,69 @@
 import styled from 'styled-components';
+import { shade } from 'polished';
+import { white, primary_blu_5, secondary_blu_5 } from '../../styles/variables';
 
 export const Container = styled.div`
-  background: #c72828;
-  padding: 30px 0;
+    background: ${white};
+    border-bottom: 0.2px solid ${shade(0.2, white)};
 
-  header {
-    width: 1280px;
-    margin: 0 auto;
-    padding: 0 0 160px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    header {
+        min-width: 100vw;
+        height: 72px;
+        margin: 0;
+        padding: 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        span {
+            color: ${secondary_blu_5};
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+
+            svg:first-child {
+                border: 1px solid ${primary_blu_5};
+                padding: 2px;
+                border-radius: 50%;
+            }
+
+            svg + svg {
+                color: ${secondary_blu_5};
+                border: 0;
+            }
+        }
+
+        svg {
+            color: ${primary_blu_5};
+        }
+    }
 
     nav {
-      div {
-        button {
-          font-weight: 600;
-          border-radius: 8px;
-          border: 0;
-          background: #39b100;
-          color: #fff;
-
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-
-          .text {
-            padding: 16px 24px;
-          }
-
-          .icon {
-            display: flex;
-            padding: 16px 16px;
-            background: #41c900;
-            border-radius: 0 8px 8px 0;
-            margin: 0 auto;
-          }
-        }
-      }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 28px;
     }
-  }
+`;
+
+export const Avatar = styled.div`
+    img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+    }
+
+    svg {
+        width: 20px;
+        height: 20px;
+        color: #312e38;
+    }
+    &:hover {
+        background: ${shade(0.2, '#312e38')};
+    }
 `;
