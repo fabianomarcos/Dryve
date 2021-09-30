@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-indent */
 import React, { useCallback } from 'react';
+import Pagination from '../../../components/Pagination';
 
 import { ICustomer } from '../../../interfaces/types';
 
@@ -45,6 +46,7 @@ const ContactsTable: React.FC<IProps> = ({ customers }) => {
                         ),
                     )}
                 </tbody>
+                <Pagination />
             </table>
         </Container>
     );

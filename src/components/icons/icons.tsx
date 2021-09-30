@@ -9,6 +9,7 @@ import {
     FiTag,
     FiSearch,
     FiPlus,
+    FiChevronRight,
 } from 'react-icons/fi';
 import {
     FaTaxi,
@@ -26,6 +27,7 @@ export const generalIcons = {
     bell: <FiBell size={size} />,
     chevronDown: <FiChevronDown size={size} />,
     chevronLeft: <FiChevronLeft size={20} />,
+    chevronRight: <FiChevronRight size={20} />,
     grid: <FiGrid size={size} />,
     home: <FiHome size={size} />,
     rocket: <FaRocket size={size} />,
