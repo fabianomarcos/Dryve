@@ -1,66 +1,71 @@
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-indent */
 import React, { useCallback } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { generalIcons } from '../icons/icons';
 import CardMenu from './cardMenu/cardMenu';
 
 import { Container } from './styles';
 
-interface IProps {
-    currentPage: string;
-}
-
-const SideMenu: React.FC<IProps> = ({ currentPage }) => {
+const SideMenu: React.FC = () => {
     const { grid, bank, rocket, user, calendar, taxi, chart, tags } =
         generalIcons;
 
-    const isActive = useCallback(
-        (page: string) => currentPage === page,
-        [currentPage],
-    );
+    const { pathname } = useLocation();
+    const url = pathname.replace('/', '');
+    const isActive = useCallback((page: string) => url === page, [url]);
+    const showLittleMenu = false;
 
     return (
         <Container>
             <CardMenu
-                title="Resumo"
+                url="home"
+                title={showLittleMenu ? '' : 'Resumo'}
                 icon={grid}
-                isActive={isActive('Resumo')}
+                isActive={isActive('home')}
             />
             <CardMenu
-                title="Oportunidades"
+                url="opportunities"
+                title={showLittleMenu ? '' : 'Oportunidades'}
                 icon={tags}
-                isActive={isActive('Oportunidades')}
+                isActive={isActive('opportunities')}
             />
             <CardMenu
-                title="Agenda"
+                url="schedule"
+                title={showLittleMenu ? '' : 'Agenda'}
                 icon={calendar}
-                isActive={isActive('Agenda')}
+                isActive={isActive('schedule')}
             />
             <CardMenu
-                title="Veículos"
+                url="vehicles"
+                title={showLittleMenu ? '' : 'Veículos'}
                 icon={taxi}
-                isActive={isActive('Veículos')}
+                isActive={isActive('vehicles')}
             />
             <CardMenu
-                title="Publicação"
+                url="publish"
+                title={showLittleMenu ? '' : 'Publicação'}
                 icon={rocket}
-                isActive={isActive('Publicação')}
+                isActive={isActive('publish')}
             />
             <CardMenu
-                title="Contatos"
+                url="contacts"
+                title={showLittleMenu ? '' : 'Contatos'}
                 icon={user}
-                isActive={isActive('Contatos')}
+                isActive={isActive('contacts')}
             />
             <CardMenu
-                title="Analytics"
+                url="analytics"
+                title={showLittleMenu ? '' : 'Analytics'}
                 icon={chart}
-                isActive={isActive('Analytics')}
+                isActive={isActive('analytics')}
             />
             <CardMenu
-                title="Financiamento"
+                url="financing"
+                title={showLittleMenu ? '' : 'Financiamento'}
                 icon={bank}
-                isActive={isActive('Financiamento')}
+                isActive={isActive('financing')}
             />
         </Container>
     );

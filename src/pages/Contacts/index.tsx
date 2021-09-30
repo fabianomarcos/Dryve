@@ -13,11 +13,7 @@ import Search from '../../components/Search';
 import Button from '../../components/Button';
 import ContactsTable from './Table/table';
 
-interface IProps {
-    title: string;
-}
-
-const Home: React.FC<IProps> = ({ title }) => {
+const Contacts: React.FC = () => {
     const { search, plus, tune } = generalIcons;
     const [loading, setLoading] = useState(false);
     const [customers, setCustomers] = useState<ICustomer[]>([]);
@@ -39,7 +35,7 @@ const Home: React.FC<IProps> = ({ title }) => {
         <Container>
             <Header>
                 <ContentHeader>
-                    <h1>{title}</h1>
+                    <h1>Contatos</h1>
                     <Search
                         name="search"
                         placeholder="Buscar..."
@@ -74,4 +70,4 @@ const Home: React.FC<IProps> = ({ title }) => {
     );
 };
 
-export default Home;
+export default Contacts;

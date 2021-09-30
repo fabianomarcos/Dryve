@@ -19,11 +19,7 @@ import {
     ContentTestDriver,
 } from './styles';
 
-interface IProps {
-    title: string;
-}
-
-const Home: React.FC<IProps> = ({ title }) => {
+const Home: React.FC = () => {
     const { taxi, tags, calendar } = generalIcons;
     const [cars, setCars] = useState<IDataCars[]>([]);
 
@@ -62,7 +58,7 @@ const Home: React.FC<IProps> = ({ title }) => {
 
     return (
         <Container>
-            <h1>{title}</h1>
+            <h1>Resumo</h1>
             <ContentHeaderCards>
                 <HeaderCard title="Vendas publicadas" data="26" icon={taxi} />
                 <HeaderCard title="Preço médio" data="R$ 41.5k" icon={tags} />
