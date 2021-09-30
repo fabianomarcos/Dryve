@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-indent */
 import React, { useState, useEffect, useCallback } from 'react';
@@ -17,21 +18,34 @@ import ContactsTable from './Table/table';
 const Contacts: React.FC = () => {
     const { search, plus, tune } = generalIcons;
     const [loading, setLoading] = useState(false);
+    const [hasError, setHasError] = useState(false);
     const [customers, setCustomers] = useState<ICustomer[]>([]);
     const history = useHistory();
+
+    const to = (promise: any) =>
+        promise
+            .then((result: any) => [null, result])
+            .catch((error: any) => [error]);
 
     useEffect(() => {
         (async () => {
             setLoading(true);
-            const response = await api.get<ICustomer[]>('/customers');
-            setCustomers(response.data);
+
+            const [error, response] = await to(
+                api.get<ICustomer[]>('/customers'),
+            );
+
+            if (error) {
+                setHasError(!!error);
+                return;
+            }
+
+            setCustomers(response?.data);
             setLoading(false);
         })();
     }, []);
 
-    const handleFilter = useCallback(() => {
-        console.log('handleFilter');
-    }, []);
+    const handleFilter = useCallback(() => console.log('handleFilter'), []);
 
     const redirectForm = useCallback(
         () => history.push('/register'),
@@ -54,7 +68,7 @@ const Contacts: React.FC = () => {
                     <Button
                         typeButton="white"
                         icon={tune}
-                        loading={loading}
+                        loading={loading && !hasError}
                         onClick={handleFilter}
                     >
                         Filtrar
@@ -62,7 +76,7 @@ const Contacts: React.FC = () => {
                     <Button
                         typeButton="blue"
                         icon={plus}
-                        loading={loading}
+                        loading={loading && !hasError}
                         onClick={redirectForm}
                     >
                         Adicionar
@@ -71,7 +85,11 @@ const Contacts: React.FC = () => {
             </Header>
 
             <TableContainer>
-                <ContactsTable customers={customers} />
+                <ContactsTable
+                    customers={customers}
+                    hasError={hasError}
+                    loading={loading}
+                />
             </TableContainer>
         </Container>
     );

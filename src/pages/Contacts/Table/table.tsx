@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-indent */
 import React, { useCallback } from 'react';
 import Empty from '../../../components/Empty';
@@ -11,9 +12,11 @@ import { Container } from './styles';
 
 interface IProps {
     customers: ICustomer[];
+    hasError: boolean;
+    loading: boolean;
 }
 
-const ContactsTable: React.FC<IProps> = ({ customers }) => {
+const ContactsTable: React.FC<IProps> = ({ customers, hasError, loading }) => {
     const formatName = useCallback((name, lastName) => {
         const initial = `${name.substring(0, 1)}${lastName.substring(0, 1)}`;
         const completeName = `${name} ${lastName}`;
@@ -28,7 +31,7 @@ const ContactsTable: React.FC<IProps> = ({ customers }) => {
     return (
         <Container>
             <>
-                {customers?.length > 0 ? (
+                {customers && customers?.length > 0 && (
                     <table>
                         <thead>
                             <tr>
@@ -53,8 +56,16 @@ const ContactsTable: React.FC<IProps> = ({ customers }) => {
                         </tbody>
                         <Pagination />
                     </table>
-                ) : (
-                    <Empty />
+                )}
+
+                {loading && !hasError && (
+                    <Empty errorMessage="Carregando..." showIcon={!loading} />
+                )}
+
+                {customers?.length === 0 && !loading && !hasError && <Empty />}
+
+                {hasError && (
+                    <Empty errorMessage="Ocorreu algum erro, tente novamente mais tarde." />
                 )}
             </>
         </Container>
