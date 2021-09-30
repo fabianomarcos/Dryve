@@ -40,6 +40,7 @@ export const ContentForm = styled.div`
     max-width: 640px;
     background: #ffffff;
     padding: 16px 32px 16px 16px;
+    border-radius: 6px;
 
     .title {
         color: #1d2c4b;

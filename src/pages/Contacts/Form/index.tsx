@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-indent */
 import React, { useCallback, useRef } from 'react';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
-import * as Yup from 'yup';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 import api from '../../../services/api';
 
@@ -32,13 +33,18 @@ interface IProps {
 
 const ContactForm: React.FC<IProps> = ({ title, data }) => {
     const formRef = useRef<FormHandles>(null);
+    const history = useHistory();
 
     const { chevronLeft, plus } = generalIcons;
+
+    const backPage = useCallback(() => {
+        history.push('/contacts');
+    }, [history]);
 
     return (
         <Container>
             <Header>
-                {chevronLeft}
+                <div onClick={backPage}>{chevronLeft}</div>
                 <h1>Editar Contato</h1>
             </Header>
 

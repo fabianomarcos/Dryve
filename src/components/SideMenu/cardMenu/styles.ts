@@ -8,6 +8,7 @@ export const Container = styled.div<IContainerProps>`
     background: #ffffff;
     color: #1d2c4b;
     cursor: pointer;
+    border-radius: 6px;
 
     div {
         display: flex;

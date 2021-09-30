@@ -58,4 +58,8 @@ export const Header = styled.div`
     h1 {
         padding-bottom: 0;
     }
+
+    svg {
+        cursor: pointer;
+    }
 `;

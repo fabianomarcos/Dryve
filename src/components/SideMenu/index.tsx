@@ -8,14 +8,17 @@ import CardMenu from './cardMenu/cardMenu';
 
 import { Container } from './styles';
 
-const SideMenu: React.FC = () => {
+interface IProps {
+    showLittleMenu: boolean;
+}
+
+const SideMenu: React.FC<IProps> = ({ showLittleMenu }) => {
     const { grid, bank, rocket, user, calendar, taxi, chart, tags } =
         generalIcons;
 
     const { pathname } = useLocation();
     const url = pathname.replace('/', '');
     const isActive = useCallback((page: string) => url === page, [url]);
-    const showLittleMenu = false;
 
     return (
         <Container>
@@ -53,7 +56,7 @@ const SideMenu: React.FC = () => {
                 url="contacts"
                 title={showLittleMenu ? '' : 'Contatos'}
                 icon={user}
-                isActive={isActive('contacts')}
+                isActive={isActive('contacts') || showLittleMenu}
             />
             <CardMenu
                 url="analytics"
