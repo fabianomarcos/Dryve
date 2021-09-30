@@ -20,6 +20,7 @@ const Routes: React.FC = () => (
         <Route path="/analytics" component={Home} />
         <Route path="/financing" component={Home} />
         <Route path="/contacts/edit" component={ContactsForm} />
+        <Route path="/register" component={ContactsForm} />
     </Switch>
 );
 

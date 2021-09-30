@@ -32,7 +32,6 @@ interface IProps {
 
 const ContactForm: React.FC<IProps> = ({ title, data }) => {
     const formRef = useRef<FormHandles>(null);
-    const history = useHistory();
 
     const { chevronLeft, plus } = generalIcons;
 
@@ -48,7 +47,7 @@ const ContactForm: React.FC<IProps> = ({ title, data }) => {
                     <span className="title">Informações</span>
                     <Form
                         ref={formRef}
-                        onSubmit={() => console.log('Submit')}
+                        onSubmit={(values: any) => console.log(values)}
                         initialData={data}
                     >
                         <div className="radio_buttons">

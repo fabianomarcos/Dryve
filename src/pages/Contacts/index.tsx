@@ -2,6 +2,7 @@
 /* eslint-disable react/jsx-indent */
 import React, { useState, useEffect, useCallback } from 'react';
 
+import { useHistory } from 'react-router-dom';
 import api from '../../services/api';
 
 import { generalIcons } from '../../components/icons/icons';
@@ -17,6 +18,7 @@ const Contacts: React.FC = () => {
     const { search, plus, tune } = generalIcons;
     const [loading, setLoading] = useState(false);
     const [customers, setCustomers] = useState<ICustomer[]>([]);
+    const history = useHistory();
 
     useEffect(() => {
         (async () => {
@@ -30,6 +32,11 @@ const Contacts: React.FC = () => {
     const handleFilter = useCallback(() => {
         console.log('handleFilter');
     }, []);
+
+    const redirectForm = useCallback(
+        () => history.push('/register'),
+        [history],
+    );
 
     return (
         <Container>
@@ -56,7 +63,7 @@ const Contacts: React.FC = () => {
                         typeButton="blue"
                         icon={plus}
                         loading={loading}
-                        onClick={handleFilter}
+                        onClick={redirectForm}
                     >
                         Adicionar
                     </Button>
