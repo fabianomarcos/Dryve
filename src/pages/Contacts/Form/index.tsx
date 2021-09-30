@@ -14,12 +14,16 @@ import {
     Content,
     TitleSection,
     EqualSizeFields,
+    SmallField,
+    BigFieldWithSmallField,
+    ButtonContainer,
 } from './styles';
+import { Header } from '../styles';
+
 import Input from '../../../components/Input';
 import Button from '../../../components/Button';
 import RadioButton from '../../../components/RadioButton';
 import { generalIcons } from '../../../components/icons/icons';
-import { Header } from '../styles';
 
 interface IProps {
     title: string;
@@ -30,14 +34,7 @@ const ContactForm: React.FC<IProps> = ({ title, data }) => {
     const formRef = useRef<FormHandles>(null);
     const history = useHistory();
 
-    const handleAddEmployee = useCallback(
-        (employersList: any, currentEmployee: any) => {
-            console.log(employersList);
-        },
-        [],
-    );
-
-    const { chevronLeft } = generalIcons;
+    const { chevronLeft, plus } = generalIcons;
 
     return (
         <Container>
@@ -96,7 +93,7 @@ const ContactForm: React.FC<IProps> = ({ title, data }) => {
                         </EqualSizeFields>
 
                         <EqualSizeFields>
-                            <section>
+                            <div className="smallFields">
                                 <Input
                                     name="birth"
                                     placeholder="Nascimento"
@@ -113,22 +110,27 @@ const ContactForm: React.FC<IProps> = ({ title, data }) => {
                                     placeholder="CPF"
                                     header="CPF"
                                 />
-                            </section>
+                            </div>
                         </EqualSizeFields>
 
                         <TitleSection>Endereço</TitleSection>
-                        <Input name="cep" placeholder="CEP" header="CEP" />
 
-                        <Input
-                            name="address"
-                            placeholder="Endereço"
-                            header="Endereço"
-                        />
-                        <Input
-                            name="number"
-                            placeholder="Número"
-                            header="Número"
-                        />
+                        <SmallField>
+                            <Input name="cep" placeholder="CEP" header="CEP" />
+                        </SmallField>
+
+                        <BigFieldWithSmallField>
+                            <Input
+                                name="address"
+                                placeholder="Endereço"
+                                header="Endereço"
+                            />
+                            <Input
+                                name="number"
+                                placeholder="Número"
+                                header="Número"
+                            />
+                        </BigFieldWithSmallField>
 
                         <EqualSizeFields>
                             <Input
@@ -143,45 +145,56 @@ const ContactForm: React.FC<IProps> = ({ title, data }) => {
                             />
                         </EqualSizeFields>
 
-                        <Input
-                            name="city"
-                            placeholder="Cidade"
-                            header="Cidade"
-                        />
-                        <Input
-                            name="state"
-                            placeholder="Estado"
-                            header="Estado"
-                        />
-                        <TitleSection>Dados Bancários</TitleSection>
+                        <BigFieldWithSmallField>
+                            <Input
+                                name="city"
+                                placeholder="Cidade"
+                                header="Cidade"
+                            />
+                            <Input
+                                name="state"
+                                placeholder="Estado"
+                                header="Estado"
+                            />
+                        </BigFieldWithSmallField>
 
+                        <TitleSection>Dados Bancários</TitleSection>
                         <EqualSizeFields>
-                            <Input
-                                name="agency"
-                                placeholder="Agência"
-                                header="Agência"
-                            />
-                            <Input
-                                name="account"
-                                placeholder="Conta"
-                                header="Conta"
-                            />
-                            <Input
-                                name="digit"
-                                placeholder="Digito"
-                                header="Digito"
-                            />
+                            <div className="smallFields">
+                                <Input
+                                    name="dropdown"
+                                    placeholder="Agência"
+                                    header="Agência"
+                                />
+                                <Input
+                                    name="agency"
+                                    placeholder="Agência"
+                                    header="Agência"
+                                />
+                                <Input
+                                    name="account"
+                                    placeholder="Conta"
+                                    header="Conta"
+                                />
+                                <Input
+                                    name="digit"
+                                    placeholder="Digito"
+                                    header="Digito"
+                                />
+                            </div>
                         </EqualSizeFields>
 
                         <TitleSection>Tags</TitleSection>
-                        <Button
-                            loading={false}
-                            typeButton="blue"
-                            onClick={() => {}}
-                        >
-                            Adicionar
-                        </Button>
-                        <div className="button-content">
+
+                        <ButtonContainer>
+                            <Button
+                                loading={false}
+                                typeButton="white"
+                                icon={plus}
+                                onClick={() => {}}
+                            >
+                                Adicionar
+                            </Button>
                             <Button
                                 loading={false}
                                 typeButton="blue"
@@ -190,7 +203,7 @@ const ContactForm: React.FC<IProps> = ({ title, data }) => {
                             >
                                 Salvar
                             </Button>
-                        </div>
+                        </ButtonContainer>
                     </Form>
                 </ContentForm>
 
