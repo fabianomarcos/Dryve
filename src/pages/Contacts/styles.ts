@@ -47,6 +47,7 @@ export const Header = styled.div`
     align-items: center;
     gap: 16px;
     padding-bottom: 24px;
+    width: 100%;
 
     h1 {
         padding-bottom: 0;

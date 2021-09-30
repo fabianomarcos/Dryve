@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 /* eslint-disable react/jsx-indent-props */
 /* eslint-disable react/jsx-indent */
 import React, {
@@ -7,24 +8,32 @@ import React, {
     useState,
     useCallback,
 } from 'react';
-
 import { IconBaseProps } from 'react-icons';
+import { FiAlertCircle } from 'react-icons/fi';
 import { useField } from '@unform/core';
 
-import { Container } from './styles';
+import { Container, Content, Error } from './styles';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
     name: string;
-    icon: React.ComponentType<IconBaseProps>;
+    containerStyle?: object;
+    header?: string;
+    icon?: React.ComponentType<IconBaseProps>;
 }
 
-const Input: React.FC<IInputProps> = ({ name, icon: Icon, ...rest }) => {
+const Input: React.FC<IInputProps> = ({
+    name,
+    header,
+    containerStyle = {},
+    icon: Icon,
+    ...rest
+}) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     const [isFocused, setIsFocused] = useState(false);
     const [isFilled, setIsFilled] = useState(false);
 
-    const { fieldName, defaultValue, registerField } = useField(name);
+    const { fieldName, defaultValue, error, registerField } = useField(name);
 
     const handleInputFocus = useCallback(() => {
         setIsFocused(true);
@@ -45,16 +54,30 @@ const Input: React.FC<IInputProps> = ({ name, icon: Icon, ...rest }) => {
     }, [fieldName, registerField]);
 
     return (
-        <Container isFilled={isFilled} isFocused={isFocused}>
-            {Icon && <Icon size={20} />}
+        <Container>
+            <span>{header && header}</span>
+            <Content
+                style={containerStyle}
+                isErrored={!!error}
+                isFilled={isFilled}
+                isFocused={isFocused}
+                data-testid="input-container"
+            >
+                {Icon && <Icon size={20} />}
+                <input
+                    onFocus={handleInputFocus}
+                    onBlur={handleInputBlur}
+                    defaultValue={defaultValue}
+                    ref={inputRef}
+                    {...rest}
+                />
 
-            <input
-                onFocus={handleInputFocus}
-                onBlur={handleInputBlur}
-                defaultValue={defaultValue}
-                ref={inputRef}
-                {...rest}
-            />
+                {error && (
+                    <Error title={error}>
+                        <FiAlertCircle color="#c53030" size={20} />
+                    </Error>
+                )}
+            </Content>
         </Container>
     );
 };

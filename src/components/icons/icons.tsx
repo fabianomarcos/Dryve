@@ -5,6 +5,7 @@ import {
     FiHome,
     FiBell,
     FiChevronDown,
+    FiChevronLeft,
     FiTag,
     FiSearch,
     FiPlus,
@@ -24,6 +25,7 @@ const size = '24px';
 export const generalIcons = {
     bell: <FiBell size={size} />,
     chevronDown: <FiChevronDown size={size} />,
+    chevronLeft: <FiChevronLeft size={20} />,
     grid: <FiGrid size={size} />,
     home: <FiHome size={size} />,
     rocket: <FaRocket size={size} />,

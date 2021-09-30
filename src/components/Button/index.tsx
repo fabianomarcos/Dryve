@@ -6,7 +6,7 @@ import { Container } from './styles';
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     loading: boolean;
     typeButton: string;
-    icon: JSX.Element;
+    icon?: JSX.Element;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -18,7 +18,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => (
     <Container typeButton={typeButton} type="button" {...rest}>
         <>
-            {icon}
+            {icon && icon}
             {loading ? 'Carregando...' : children}
         </>
     </Container>

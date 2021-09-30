@@ -4,19 +4,20 @@ import React, { InputHTMLAttributes, useRef } from 'react';
 import { Container } from './styles';
 
 interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
-    name: string;
-    icon: JSX.Element;
+    text: string;
 }
 
-const Search: React.FC<IInputProps> = ({ name, icon: Icon, ...rest }) => {
+const RadioButton: React.FC<IInputProps> = ({ text, ...rest }) => {
     const inputRef = useRef<HTMLInputElement>(null);
 
     return (
         <Container>
-            <input name={name} ref={inputRef} {...rest} />
-            {Icon && Icon}
+            <span>
+                <input type="radio" />
+            </span>
+            <span>{text}</span>
         </Container>
     );
 };
 
-export default Search;
+export default RadioButton;

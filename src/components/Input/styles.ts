@@ -1,19 +1,41 @@
 import styled, { css } from 'styled-components';
+import Tooltip from '../Tooltip';
 
 interface IContainerProps {
     isFocused: boolean;
     isFilled: boolean;
+    isErrored: boolean;
 }
 
-export const Container = styled.div<IContainerProps>`
+export const Container = styled.div`
+    width: 100%;
+
+    span {
+        background: #ffffff;
+        padding: 0 4px;
+        margin-left: 10px;
+
+        font-size: 10px;
+        line-height: 10px;
+        color: #a3a3a3;
+    }
+
+    div {
+        margin-top: -6px;
+    }
+`;
+
+export const Content = styled.div<IContainerProps>`
     display: flex;
     align-items: center;
 
-    background: #fff;
-    border-radius: 8px;
-    padding: 18px 24px;
+    border-radius: 6px;
+    border: 1px solid #d1d1d1;
+    background: #ffffff;
+    color: #1d2c4b;
+    padding: 12px;
     width: 100%;
-    font-size: 16px;
+    height: 38px;
 
     & + div {
         margin-top: 24px;
@@ -27,30 +49,55 @@ export const Container = styled.div<IContainerProps>`
     }
 
     ${props =>
-        props.isFocused &&
+        props.isErrored &&
         css`
-            color: #ff9000;
-            border-color: #ff9000;
+            color: #c53030;
+            border-color: #c53030;
         `}
 
     ${props =>
+        props.isFocused &&
+        css`
+            color: #1d2c4b;
+            border-color: #1d2c4b;
+        `}
+
+  ${props =>
         props.isFilled &&
         css`
-            color: #ff9000;
+            color: #1d2c4b;
         `}
 
   input {
         flex: 1;
         background: transparent;
         border: 0;
-        color: #b7b7cc;
+        color: #1d2c4b;
 
         &::placeholder {
-            color: #b7b7cc;
+            filter: opacity(0.6);
         }
     }
 
     svg {
         margin-right: 16px;
+    }
+`;
+
+export const Error = styled(Tooltip)`
+    height: 20px;
+    margin-left: 16px;
+
+    svg {
+        margin: 0;
+    }
+
+    span {
+        background: #c53030;
+        color: #fff;
+
+        &::before {
+            border-color: #c53030 transparent;
+        }
     }
 `;

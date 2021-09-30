@@ -86,6 +86,7 @@
 		"react/prop-types": "off",
 		"react/display-name": "off",
 		"react/jsx-indent": "off",
+        "react/require-default-props": "off",
 		"import/order": "off"
 	}
 }
