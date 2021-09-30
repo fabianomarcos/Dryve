@@ -1,12 +1,17 @@
 import styled, { css } from 'styled-components';
+import {
+    primary_blu_5,
+    secondary_blu_5,
+    white,
+} from '../../../styles/variables';
 
 interface IContainerProps {
     isActive: boolean;
 }
 
 export const Container = styled.div<IContainerProps>`
-    background: #ffffff;
-    color: #1d2c4b;
+    background: ${white};
+    color: ${secondary_blu_5};
     cursor: pointer;
     border-radius: 6px;
 
@@ -26,7 +31,7 @@ export const Container = styled.div<IContainerProps>`
     ${props =>
         props.isActive &&
         css`
-            color: #ffffff;
-            background: #0065ff;
+            color: ${white};
+            background: ${primary_blu_5};
         `};
 `;

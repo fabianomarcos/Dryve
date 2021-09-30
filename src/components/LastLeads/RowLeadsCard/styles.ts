@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { secondary_blu_5, white } from '../../../styles/variables';
 
 export const Container = styled.div`
-    background: #ffffff;
-    color: #1d2c4b;
+    background: ${white};
+    color: ${secondary_blu_5};
     cursor: pointer;
 
     display: grid;

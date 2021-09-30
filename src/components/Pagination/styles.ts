@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { primary_blu_5, secondary_blu_5, white } from '../../styles/variables';
 
 export const Container = styled.div`
     display: flex;
@@ -6,7 +7,7 @@ export const Container = styled.div`
     align-items: center;
     width: 100%;
 
-    background: #ffffff;
+    background: ${white};
     height: 28px;
     width: 100%;
     padding: 24px 16px 16px;
@@ -17,22 +18,22 @@ export const Container = styled.div`
         width: 28px;
         height: 28px;
         border-radius: 6px;
-        color: #ffffff;
-        border: #ffffff;
-        background: #0065ff;
+        color: ${white};
+        border: ${white};
+        background: ${primary_blu_5};
     }
 
     button + button {
         width: 28px;
         height: 28px;
         border-radius: 6px;
-        color: #1d2c4b;
-        border: #ffffff;
-        background: #ffffff;
+        color: ${secondary_blu_5};
+        border: ${white};
+        background: ${white};
     }
 
     svg {
-        color: #0065ff;
+        color: ${primary_blu_5};
         margin-left: 18px;
     }
 `;

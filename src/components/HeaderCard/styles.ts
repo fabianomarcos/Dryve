@@ -1,8 +1,9 @@
 import styled from 'styled-components';
+import { primary_blu_5, secondary_blu_5, white } from '../../styles/variables';
 
 export const Container = styled.div`
-    background: #ffffff;
-    color: #1d2c4b;
+    background: ${white};
+    color: ${secondary_blu_5};
     height: 120px;
     min-width: 260px;
     width: 100%;
@@ -22,6 +23,6 @@ export const Container = styled.div`
     }
 
     svg {
-        color: #0065ff;
+        color: ${primary_blu_5};
     }
 `;

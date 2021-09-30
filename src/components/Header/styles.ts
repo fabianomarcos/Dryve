@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
+import { white, primary_blu_5, secondary_blu_5 } from '../../styles/variables';
 
 export const Container = styled.div`
-    background: #ffffff;
-    border-bottom: 0.2px solid ${shade(0.2, '#ffffff')};
+    background: ${white};
+    border-bottom: 0.2px solid ${shade(0.2, white)};
 
     header {
         min-width: 100vw;
@@ -16,7 +17,7 @@ export const Container = styled.div`
         justify-content: space-between;
 
         span {
-            color: #1d2c4b;
+            color: ${secondary_blu_5};
         }
 
         section {
@@ -26,19 +27,19 @@ export const Container = styled.div`
             gap: 8px;
 
             svg:first-child {
-                border: 1px solid #0065ff;
+                border: 1px solid ${primary_blu_5};
                 padding: 2px;
                 border-radius: 50%;
             }
 
             svg + svg {
-                color: #1d2c4b;
+                color: ${secondary_blu_5};
                 border: 0;
             }
         }
 
         svg {
-            color: #0065ff;
+            color: ${primary_blu_5};
         }
     }
 

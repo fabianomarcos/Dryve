@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { secondary_blu_5 } from './variables';
 
 export default createGlobalStyle`
     * {
@@ -10,7 +11,7 @@ export default createGlobalStyle`
 
     body {
         background: #fff;
-        color: #1d2c4b;
+        color: ${secondary_blu_5};
         -webkit-font-smoothing: antialiased;
     }
 

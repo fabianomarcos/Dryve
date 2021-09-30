@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
+import { secondary_blu_5, white } from '../../styles/variables';
 
 export const Container = styled.div`
-    background: #ffffff;
-    border: 0.2px solid ${shade(0.1, '#ffffff')};
+    background: ${white};
+    border: 0.2px solid ${shade(0.1, white)};
     height: 263px;
     min-width: 260px;
     width: 100%;
@@ -13,6 +14,6 @@ export const Container = styled.div`
 
     p {
         font-size: 14px;
-        color: #1d2c4b;
+        color: ${secondary_blu_5};
     }
 `;

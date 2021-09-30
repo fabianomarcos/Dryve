@@ -1,5 +1,10 @@
 import { shade } from 'polished';
 import styled from 'styled-components';
+import {
+    primary_blu_5,
+    secondary_blu_5,
+    white,
+} from '../../../styles/variables';
 
 export const Container = styled.div`
     display: flex;
@@ -14,28 +19,28 @@ export const Container = styled.div`
 
     border-radius: 8px;
     border: 1px solid #efefef;
-    background: #ffffff;
+    background: ${white};
     padding: 16px;
 
     th {
-        color: #a3a3a3;
+        color: neutral;
         font-weight: normal;
         padding: 10px 25px;
         text-align: left;
-        border-bottom: 0.5px solid ${shade(0.05, '#ffffff')};
+        border-bottom: 0.5px solid ${shade(0.05, white)};
     }
 
     td {
-        color: #1d2c4b;
+        color: ${secondary_blu_5};
         padding: 8px 16px;
-        border-bottom: 0.5px solid ${shade(0.05, '#ffffff')};
+        border-bottom: 0.5px solid ${shade(0.05, white)};
         gap: 16px;
 
         span {
             width: 48px;
             height: 48px;
-            background: #eaf9ff;
-            color: #0065ff;
+            background: primary_blu_10;
+            color: ${primary_blu_5};
             border-radius: 50%;
             padding: 15px;
 

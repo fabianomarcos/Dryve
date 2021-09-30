@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { secondary_blu_5, white } from '../../../styles/variables';
 
 interface IPropsImage {
     image: string;
@@ -10,7 +11,7 @@ export const Container = styled.div`
 
     gap: 16px;
     padding: 24px;
-    background: #ffffff;
+    background: ${white};
     min-width: 544px;
     width: 100%;
     border-radius: 8px;
@@ -24,7 +25,7 @@ export const Container = styled.div`
         font-size: 12px;
 
         strong {
-            color: #1d2c4b;
+            color: ${secondary_blu_5};
         }
 
         font-weight: normal;
@@ -75,7 +76,7 @@ export const TestDriverScheduled = styled.div`
         align-items: center;
 
         background: #cce8fe;
-        color: #1d2c4b;
+        color: ${secondary_blu_5};
         padding: 4px 8px;
         border-radius: 500px;
         font-weight: 600;

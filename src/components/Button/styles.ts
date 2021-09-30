@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { shade } from 'polished';
+import { primary_blu_5, white } from '../../styles/variables';
 
 interface IProps {
     typeButton: string;
@@ -11,8 +12,8 @@ export const Container = styled.button<IProps>`
     align-items: center;
     gap: 13.5px;
 
-    background: #0065ff;
-    color: #ffffff;
+    background: ${primary_blu_5};
+    color: ${white};
     font-weight: 600;
     font-style: normal;
     font-size: 14px;
@@ -26,18 +27,18 @@ export const Container = styled.button<IProps>`
     transition: background-color 0.2s;
 
     &:hover {
-        background: ${shade(0.2, '#0065FF')};
+        background: ${shade(0.2, primary_blu_5)};
     }
 
     ${props =>
         props.typeButton === 'white' &&
         css`
-            color: #0065ff;
-            background: #ffffff;
+            color: ${primary_blu_5};
+            background: ${white};
             width: 100px;
 
             &:hover {
-                background: ${shade(0.2, '#ffffff')};
+                background: ${shade(0.2, white)};
             }
         `}
 `;

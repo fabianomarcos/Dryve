@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { primary_blu_5, secondary_blu_5 } from '../../../styles/variables';
 
 export const Container = styled.div`
     display: flex;
@@ -14,11 +15,11 @@ export const Container = styled.div`
         font-style: normal;
         font-weight: 600;
         font-size: 24px;
-        color: #1d2c4b;
+        color: ${secondary_blu_5};
     }
 
     svg {
-        color: #0065ff;
+        color: ${primary_blu_5};
     }
 `;
 
@@ -43,7 +44,7 @@ export const ContentForm = styled.div`
     border-radius: 6px;
 
     .title {
-        color: #1d2c4b;
+        color: ${secondary_blu_5};
         border-bottom: 5px solid #efefef;
     }
 
@@ -60,7 +61,7 @@ export const ContentForm = styled.div`
 `;
 
 export const TitleSection = styled.div`
-    color: #0065ff;
+    color: ${primary_blu_5};
     font-weight: 600;
     font-size: 16px;
     margin: 24px 0;
@@ -108,7 +109,7 @@ export const ButtonContainer = styled.div`
         border: 1px solid #cce8fe;
 
         svg {
-            color: #0065ff;
+            color: ${primary_blu_5};
         }
     }
 

@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { neutral, secondary_blu_5, white } from '../../styles/variables';
 import Tooltip from '../Tooltip';
 
 interface IContainerProps {
@@ -11,13 +12,13 @@ export const Container = styled.div`
     width: 100%;
 
     span {
-        background: #ffffff;
+        background: ${white};
         padding: 0 4px;
         margin-left: 10px;
 
         font-size: 10px;
         line-height: 10px;
-        color: #a3a3a3;
+        color: ${neutral};
     }
 
     div {
@@ -31,8 +32,8 @@ export const Content = styled.div<IContainerProps>`
 
     border-radius: 6px;
     border: 1px solid #d1d1d1;
-    background: #ffffff;
-    color: #1d2c4b;
+    background: ${white};
+    color: ${secondary_blu_5};
     padding: 12px;
     width: 100%;
     height: 38px;
@@ -58,21 +59,21 @@ export const Content = styled.div<IContainerProps>`
     ${props =>
         props.isFocused &&
         css`
-            color: #1d2c4b;
-            border-color: #1d2c4b;
+            color: ${secondary_blu_5};
+            border-color: ${secondary_blu_5};
         `}
 
   ${props =>
         props.isFilled &&
         css`
-            color: #1d2c4b;
+            color: ${secondary_blu_5};
         `}
 
   input {
         flex: 1;
         background: transparent;
         border: 0;
-        color: #1d2c4b;
+        color: ${secondary_blu_5};
 
         &::placeholder {
             filter: opacity(0.6);
@@ -94,7 +95,7 @@ export const Error = styled(Tooltip)`
 
     span {
         background: #c53030;
-        color: #fff;
+        color: ${white};
 
         &::before {
             border-color: #c53030 transparent;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { secondary_blu_5 } from '../../styles/variables';
 
 export const Container = styled.div`
     height: 100%;
@@ -8,7 +9,7 @@ export const Container = styled.div`
     padding: 24px 31px;
 
     h1 {
-        color: #1d2c4b;
+        color: ${secondary_blu_5};
         font-weight: 600;
         font-size: 24px;
         line-height: 100%;
