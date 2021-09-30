@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-indent */
 import React, { useCallback } from 'react';
+import Empty from '../../../components/Empty';
 import Pagination from '../../../components/Pagination';
 
 import { ICustomer } from '../../../interfaces/types';
@@ -26,28 +27,36 @@ const ContactsTable: React.FC<IProps> = ({ customers }) => {
 
     return (
         <Container>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nome do cliente</th>
-                        <th>E-mail</th>
-                        <th>Telefone</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    {customers.map(
-                        ({ id, name, lastName, email, telephone }) => (
-                            <tr key={id}>
-                                <td>{formatName(name, lastName)}</td>
-                                <td>{email}</td>
-                                <td>{mascaraTelephone(`${telephone}`)}</td>
+            <>
+                {customers?.length > 0 ? (
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome do cliente</th>
+                                <th>E-mail</th>
+                                <th>Telefone</th>
                             </tr>
-                        ),
-                    )}
-                </tbody>
-                <Pagination />
-            </table>
+                        </thead>
+
+                        <tbody>
+                            {customers.map(
+                                ({ id, name, lastName, email, telephone }) => (
+                                    <tr key={id}>
+                                        <td>{formatName(name, lastName)}</td>
+                                        <td>{email}</td>
+                                        <td>
+                                            {mascaraTelephone(`${telephone}`)}
+                                        </td>
+                                    </tr>
+                                ),
+                            )}
+                        </tbody>
+                        <Pagination />
+                    </table>
+                ) : (
+                    <Empty />
+                )}
+            </>
         </Container>
     );
 };
