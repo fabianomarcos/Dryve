@@ -1,6 +1,8 @@
 import { shade } from 'polished';
 import styled from 'styled-components';
 import {
+    neutral,
+    primary_blu_10,
     primary_blu_5,
     secondary_blu_5,
     white,
@@ -23,7 +25,7 @@ export const Container = styled.div`
     padding: 16px;
 
     th {
-        color: neutral;
+        color: ${neutral};
         font-weight: normal;
         padding: 10px 25px;
         text-align: left;
@@ -39,7 +41,7 @@ export const Container = styled.div`
         span {
             width: 48px;
             height: 48px;
-            background: primary_blu_10;
+            background: ${primary_blu_10};
             color: ${primary_blu_5};
             border-radius: 50%;
             padding: 15px;
