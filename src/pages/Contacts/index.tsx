@@ -18,6 +18,7 @@ import ContactsTable from './Table/table';
 const Contacts: React.FC = () => {
     const { search, plus, tune } = generalIcons;
     const [loading, setLoading] = useState(false);
+    const [term, setTerm] = useState('');
     const [hasError, setHasError] = useState(false);
     const [customers, setCustomers] = useState<ICustomer[]>([]);
     const history = useHistory();
@@ -37,6 +38,7 @@ const Contacts: React.FC = () => {
 
             if (error) {
                 setHasError(!!error);
+                setLoading(false);
                 return;
             }
 
@@ -61,6 +63,10 @@ const Contacts: React.FC = () => {
                         name="search"
                         placeholder="Buscar..."
                         icon={search}
+                        keyResponse="name"
+                        data={customers}
+                        useTerm={{ term, setTerm }}
+                        setResponse={setCustomers}
                     />
                 </ContentHeader>
 
